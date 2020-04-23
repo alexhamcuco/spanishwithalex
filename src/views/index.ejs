@@ -5,39 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><%=  title %></title>
+
     <!-- BOOTSTRAP 4-->
+
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
-        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" 
+        crossorigin="anonymous">
+
     <!-- FONT AWESOME -->
+
     <script src="https://kit.fontawesome.com/58b35a8545.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <nav class="navbar navbar-dark bg-dark">
-
-        <ul class="nav justify-content-end">
-            <li class="nav-item">
-                <a class="nav-link active" href="/">
-                    <i class="fas fa-home"></i>
-                            Spanish with Alex</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/materials">
-                    <i class="fas fa-book"></i>
-                    Materials</a>
-            </li>
-            <li class="nav-item">
-                <a class="nav-link" href="#/courses">
-                    <i class="fas fa-graduation-cap"></i>
-                    Courses</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#/contact">
-                        <i class="fas fa-envelope"></i>
-                        Contact</a>
-            </li>
-        </ul>
     
+    <%- include('partials/navigation'); %>    
 </body>
 
 </html>
