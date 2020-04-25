@@ -1,0 +1,8 @@
+{
+    "prettier.withNodeModules": true,
+    "editor.formatOnType": true,
+    "editor.smoothScrolling": true,
+    "editor.formatOnSave": true,
+    "prettier.tabWidth": 4,
+    "prettier.singleQuote": true
+}
