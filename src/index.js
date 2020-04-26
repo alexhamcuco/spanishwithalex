@@ -17,3 +17,7 @@ app.use(require('./routes/index'));
 app.listen(app.get('port'), () => {
     console.log('server on port', app.get('port'));
 });
+
+//add files public folder static files
+
+app.use(express.static(path.join(__dirname, 'public')));
