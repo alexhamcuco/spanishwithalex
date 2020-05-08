@@ -13,4 +13,8 @@ router.get('/materials', (req, res) => {
     res.render('materials', { title: 'Materials to learn' });
 });
 
+router.get('/monkey', (req, res) => {
+    res.render('monkey', { title: 'Materials to learn' });
+});
+
 module.exports = router;

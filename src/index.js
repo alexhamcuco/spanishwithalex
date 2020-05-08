@@ -21,3 +21,4 @@ app.listen(app.get('port'), () => {
 //add files public folder static files
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(__dirname + '/images'));
