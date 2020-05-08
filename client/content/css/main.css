@@ -25,3 +25,8 @@ body {
 header img {
     width: 60%;
 }
+
+.logo {
+    width: 100px;
+    height: 100px;
+}
