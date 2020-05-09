@@ -6,7 +6,7 @@ const path = require('path');
 app.set('port', 3000);
 // set the starting path for the views
 // view engine setup
-app.set('views', path.join('./client/pages'));
+app.set('views', './client/pages');
 app.set('view engine', 'ejs');
 
 //middlwares
@@ -15,7 +15,7 @@ app.set('view engine', 'ejs');
 app.use(require('./routes/controller'));
 
 // set path for static assets
-app.use(express.static(path.join('./client/content')));
+app.use(express.static('./client/content'));
 // app.use(express.static(path.join(__dirname, 'public')));
 // app.use(express.static(__dirname + '/images'));
 // app.use('/content', express.static(__dirname + '/content')); //allow content folder to be used
