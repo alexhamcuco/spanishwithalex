@@ -2,7 +2,7 @@ const express = require('express');
 const app = express();
 const path = require('path');
 
-// settings
+// settings define una variable dentro de app para que siempre se inicie tenga acceso a la variable port.
 app.set('port', 3000);
 // set the starting path for the views
 // view engine setup
