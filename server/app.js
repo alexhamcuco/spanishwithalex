@@ -1,13 +1,27 @@
 const express = require('express');
 const app = express();
 const path = require('path');
+var hbs = require('express-handlebars');
 
 // settings define una variable dentro de app para que siempre se inicie tenga acceso a la variable port.
 app.set('port', 3000);
 // set the starting path for the views
 // view engine setup
-app.set('views', './client/pages');
-app.set('view engine', 'ejs');
+app.engine(
+    'hbs',
+    hbs({
+        extname: 'hbs',
+        defaultLayout: 'layout',
+        // problem here, I had to do a shitty fix
+        //don't know how to set the folder properly
+        layoutsDir: __dirname + '/layouts',
+    })
+);
+
+// //if you configure Exprees to look for views in a custom location, y'll need to felect that by passin an updated
+// path as teh layoutsDir porperty in your configuracion. partialsDir="views/partials/"
+app.set('views', `./client/pages`);
+app.set('view engine', 'hbs');
 
 //middlwares
 
