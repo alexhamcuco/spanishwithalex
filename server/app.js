@@ -50,7 +50,42 @@ app.get('/', (req, res) => {
 });
 
 app.post('/send', (req, res) => {
-    console.log(req.body);
+    const output = `
+    <p>You have  new contact request </p>
+    <h3>Contact Details</h3>
+    <ul>
+     <li>Email: ${req.body.email}</li>
+     <li>Message: ${req.body.message}</li>
+     </ul>
+
+    `;
+    // create reusable transporter object using the default SMTP transport
+    let transporter = nodemailer.createTransport({
+        host: 'smtp.gmail.com',
+        port: 587,
+        secure: false, // true for 465, false for other ports
+        auth: {
+            user: 'blackbookopen@gmail.com', // generated ethereal user
+            pass: 'Nucleoduronegro24', // generated ethereal password
+        },
+        tls: {
+            rejectUnauthorized: false,
+        },
+    });
+
+    // send mail with defined transport object
+    let info = transporter.sendMail({
+        from: '"Alexito" <blackbookopen@gmail.com>', // sender address
+        to: 'spanishwithalex@gmail.com', // list of receivers
+        subject: 'new student', // Subject line
+        text: 'Hello world?', // plain text body
+        html: output, // html body
+    });
+
+    console.log('Message sent: %s', info.messageId);
+    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+
+    res.render('contact', { msg: 'Email has been sent' });
 });
 
 // listening the server
