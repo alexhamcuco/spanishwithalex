@@ -16,7 +16,7 @@ app.engine(
         defaultLayout: 'layout',
         // problem here, I had to do a shitty fix
         //don't know how to set the folder properly
-        layoutsDir: __dirname + '/layouts',
+        layoutsDir: './client/pages',
     })
 );
 
