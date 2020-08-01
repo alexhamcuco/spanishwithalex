@@ -68,9 +68,6 @@ app.post('/send', (req, res) => {
             user: 'blackbookopen@gmail.com', // generated ethereal user
             pass: 'Nucleoduronegro24', // generated ethereal password
         },
-        tls: {
-            rejectUnauthorized: false,
-        },
     });
 
     // send mail with defined transport object
