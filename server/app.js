@@ -4,6 +4,7 @@ const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
 const path = require('path');
 var hbs = require('express-handlebars');
+require('dotenv').config();
 
 // settings define una variable dentro de app para que siempre se inicie tenga acceso a la variable port.
 app.set('port', 3000);
