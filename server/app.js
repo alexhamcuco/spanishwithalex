@@ -58,12 +58,23 @@ app.get('/', (req, res) => {
     res.render('contact');
 });
 
+// Alex - Change this back to a POST
+// I was using a GET just because it was easier for my testing
+// also, you may want to consider a moving all of these routes to a separate file
+// controller/api.js
+
 app.get('/send', (request, response) => {
     const mailOptions = {
         from: 'spanishwithalex.com', // sender address
         to: 'spanishwithalex.com', //
         subject: 'new student', // Subject line
-        html: 'Hi!',
+        // you can modify the HTML below any way you like
+        // such as adding in html tags
+        // '</br></br>' +
+        html:
+            'This is being sent to you from Node Mailer.' +
+            '</br></br>' +
+            'I have checked in the working code.',
     };
 
     // send mail with defined transport object
