@@ -2,6 +2,14 @@ const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
 const nodemailer = require('nodemailer');
+const sesTransport = require('nodemailer-ses-transport');
+
+const transporter = nodemailer.createTransport(
+    sesTransport({
+        rateLimit: 1,
+    })
+);
+
 const path = require('path');
 var hbs = require('express-handlebars');
 require('dotenv').config();
@@ -50,40 +58,28 @@ app.get('/', (req, res) => {
     res.render('contact');
 });
 
-app.post('/send', (req, res) => {
-    const output = `
-    <p>You have  new contact request </p>
-    <h3>Contact Details</h3>
-    <ul>
-     <li>Email: ${req.body.email}</li>
-     <li>Message: ${req.body.message}</li>
-     </ul>
-
-    `;
-    // create reusable transporter object using the default SMTP transport
-    let transporter = nodemailer.createTransport({
-        host: 'smtp.gmail.com',
-        port: 587,
-        secure: false, // true for 465, false for other ports
-        auth: {
-            user: 'blackbookopen@gmail.com', // generated ethereal user
-            pass: 'mypassword', // generated ethereal password
-        },
-    });
+app.get('/send', (request, response) => {
+    const mailOptions = {
+        from: 'spanishwithalex.com', // sender address
+        to: 'spanishwithalex.com', //
+        subject: 'new student', // Subject line
+        html: 'Hi!',
+    };
 
     // send mail with defined transport object
-    let info = transporter.sendMail({
-        from: '"Alexito" <blackbookopen@gmail.com>', // sender address
-        to: 'spanishwithalex@gmail.com', // list of receivers
-        subject: 'new student', // Subject line
-        text: 'Hello world?', // plain text body
-        html: output, // html body
+    transporter.sendMail(mailOptions, (error, result) => {
+        if (error) {
+            console.log(error);
+            // do something?
+            response.send(500);
+        }
+        response.json('ok');
     });
 
-    console.log('Message sent: %s', info.messageId);
-    console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
+    // console.log('Message sent: %s', info.messageId);
+    // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-    res.render('contact', { msg: 'Email has been sent' });
+    // res.render('contact', { msg: 'Email has been sent' });
 });
 
 // listening the server
