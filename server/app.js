@@ -63,7 +63,7 @@ app.get('/', (req, res) => {
 // also, you may want to consider a moving all of these routes to a separate file
 // controller/api.js
 
-app.get('/send', (request, response) => {
+app.post('/send', (request, response) => {
     const mailOptions = {
         from: 'spanishwithalex@gmail.com', // sender address
         to: 'spanishwithalex@gmail.com', //
@@ -71,10 +71,7 @@ app.get('/send', (request, response) => {
         // you can modify the HTML below any way you like
         // such as adding in html tags
         // '</br></br>' +
-        html:
-            'This is being sent to you from Node Mailer.' +
-            '</br></br>' +
-            'I have checked in the working code.',
+        html: `This is being sent to you from Node Mailer.</br></br>I have checked in the working code.`,
     };
 
     // send mail with defined transport object
