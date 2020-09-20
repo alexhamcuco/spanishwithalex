@@ -65,8 +65,8 @@ app.get('/', (req, res) => {
 
 app.get('/send', (request, response) => {
     const mailOptions = {
-        from: 'spanishwithalex.com', // sender address
-        to: 'spanishwithalex.com', //
+        from: 'spanishwithalex@gmail.com', // sender address
+        to: 'spanishwithalex@gmail.com', //
         subject: 'new student', // Subject line
         // you can modify the HTML below any way you like
         // such as adding in html tags
