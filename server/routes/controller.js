@@ -17,8 +17,16 @@ router.get('/servsestar', (req, res) => {
     res.render('servsestar', { title: 'Materials to learn' });
 });
 
+router.get('/servsestar2', (req, res) => {
+    res.render('servsestar2', { title: 'Materials to learn' });
+});
+
 router.get('/policy', (req, res) => {
     res.render('policy', { title: 'policy' });
+});
+
+router.get('/prueba', (req, res) => {
+    res.render('prueba', { title: 'Materials to learn' });
 });
 
 module.exports = router;
