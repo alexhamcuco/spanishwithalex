@@ -1,18 +1,19 @@
 const express = require('express');
 const app = express();
 const bodyParser = require('body-parser');
-const nodemailer = require('nodemailer');
-const sesTransport = require('nodemailer-ses-transport');
-
-const transporter = nodemailer.createTransport(
-    sesTransport({
-        rateLimit: 1,
-    })
-);
+const dotenv = require('dotenv');
 
 const path = require('path');
 var hbs = require('express-handlebars');
-require('dotenv').config();
+
+const configPath = dotenv.config({
+    path: path.join(__dirname + '/config/config.env'),
+});
+
+if (configPath.error) {
+    throw configPath.error;
+}
+const email = require('./email');
 
 // settings define una variable dentro de app para que siempre se inicie tenga acceso a la variable port.
 app.set('port', 3000);
@@ -58,36 +59,16 @@ app.get('/', (req, res) => {
     res.render('contact');
 });
 
-// Alex - Change this back to a POST
-// I was using a GET just because it was easier for my testing
-// also, you may want to consider a moving all of these routes to a separate file
-// controller/api.js
-
 app.post('/send', (request, response) => {
-    const mailOptions = {
-        from: 'spanishwithalex@gmail.com', // sender address
-        to: 'spanishwithalex@gmail.com', //
-        subject: 'new student', // Subject line
-        // you can modify the HTML below any way you like
-        // such as adding in html tags
-        // '</br></br>' +
-        html: `This is being sent to you from Node Mailer.</br></br>I have checked in the working code.`,
-    };
+    // call email to send an email
+    email.sendEmail(request.body.email, request.body.message);
 
-    // send mail with defined transport object
-    transporter.sendMail(mailOptions, (error, result) => {
-        if (error) {
-            console.log(error);
-            // do something?
-            response.send(500);
-        }
-        response.json('ok');
-    });
+    // response.send('Email is sent!');
 
     // console.log('Message sent: %s', info.messageId);
     // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-    // res.render('contact', { msg: 'Email has been sent' });
+    response.render('contact', { msg: 'Email has been sent' });
 });
 
 // listening the server
