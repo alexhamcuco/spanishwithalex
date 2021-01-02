@@ -17,8 +17,11 @@ router.get('/servsestar', (req, res) => {
     res.render('servsestar', { title: 'Materials to learn' });
 });
 
-router.get('/servsestar2', (req, res) => {
-    res.render('servsestar2', { title: 'Materials to learn' });
+router.get('/LasVocales', (req, res) => {
+    res.render('LasVocales', { title: 'Materials to learn' });
+});
+router.get('/FalsosAmigos', (req, res) => {
+    res.render('FalsosAmigos', { title: 'Materials to learn' });
 });
 
 router.get('/policy', (req, res) => {
