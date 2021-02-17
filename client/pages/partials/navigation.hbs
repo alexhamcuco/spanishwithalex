@@ -14,14 +14,30 @@
 
                     <!--I dont understand why this link has the # symblo-->
                 </li>
-                <li class="nav-item">
+                {{!-- <li class="nav-item">
                     <a class="nav-link" href="/materials"><i class="fas fa-book"></i> Materials</a>
-                </li>
+                </li> --}}
+
+                <div class="dropdown">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="/"><i class="fas fa-book"></i> Materials</a>
+                    </li>
+                    <div class="dropdown-content">
+                        <a href="#">Link 1</a>
+                        <a href="#">Link 2</a>
+                        <a href="#">Link 3</a>
+                    </div>
+                </div>
+
+
+
+
                 <li class="nav-item">
                     <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i> Contact</a>
+                    {{!--
                 <li class="nav-item">
                     <a class="nav-link" href="/policy"><i class="fas fa-envelope"></i> Policy</a>
-                </li>
+                </li> --}}
             </ul>
         </div>
     </div>
