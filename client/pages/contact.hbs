@@ -15,29 +15,44 @@
 <body>
     {{> navigation }}
 
+    <style>
+        img {
+            width: 45%;
+            height: auto;
+        }
+    </style>
+    <p style="text-align:center;"><img src="\images\dogbitingleg.png" alt="dogbiting" /></p>
+
+
+
     <div class="container p-5">
         <div class="row">
-            <div class="col-md-4 offset-md-4">
+            <div class="col-md-9 offset-md-1">
                 <div class="card animated flipInY">
                     <div class="cad-header bg-dark text-white text-center">
-                        <h3>Contact me</h3>
+                        <h3>
+                            Ask me anything. I don't bite.
+                        </h3>
                         {{ msg }}
                     </div>
                     <div class="card-body">
                         <form method="POST" action="send">
 
                             <div class=" form-group">
-                                <input type="text" name="email" class="form-control" placeholder="Email" />
+                                <input type="text" name=" email" class="form-control" placeholder="Your email">
 
                                 <div class="form-group">
                                     <textarea class="form-control" name="message" cols="30" rows="10"
-                                        placeholder="Message"></textarea>
+                                        placeholder="Tell me how can I help you"></textarea>
                                 </div>
                                 <div class="form-group">
                                     <button type="submit" class="btn btn-primary btn-block">
-                                        Send message
+                                        Send message to Alex
                                     </button>
+
+
                                 </div>
+
 
                                 <!-- part from the recaptcha tutorial -->
                                 <!-- </form>
