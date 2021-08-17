@@ -13,6 +13,14 @@ router.get('/materials', (req, res) => {
     res.render('materials', { title: 'Materials to learn' });
 });
 
+router.get('/materials1', (req, res) => {
+    res.render('materials', { title: 'Materials to learn1' });
+});
+
+router.get('/materials2', (req, res) => {
+    res.render('materials', { title: 'Materials to learn2' });
+});
+
 router.get('/servsestar', (req, res) => {
     res.render('servsestar', { title: 'Materials to learn' });
 });
