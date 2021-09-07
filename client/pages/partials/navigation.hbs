@@ -9,22 +9,22 @@
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav ml-auto">
-                <li class="nav-item active">
+                <li class="nav-item inactive">
                     <a class="nav-link" href="/"><i class="fas fa-home"></i> Home</a>
-
-                    <!--I dont understand why this link has the # symblo-->
                 </li>
+                <!--I dont understand why this link has the # symblo-->
+
                 {{!-- <li class="nav-item">
                     <a class="nav-link" href="/materials"><i class="fas fa-book"></i> Materials</a>
                 </li> --}}
 
                 <div class="dropdown">
-                    <li class="nav-item active">
-                        <a class="nav-link" href="/"><i class="fas fa-book"></i> Materials</a>
+                    <li class="nav-item inactive">
+                        <a class="nav-link" href="/materials"><i class="fas fa-book"></i> Materials</a>
                     </li>
                     <div class="dropdown-content">
-                        <a href="/materials">Podcasts</a>
-                        <!--<a href="/#">Videos</a>
+                        <!--<a href="/materials">Podcasts</a>
+                       <a href="/#">Videos</a>
                         <a href="/#">Courses</a>-->
                     </div>
                 </div>
@@ -32,9 +32,10 @@
 
 
 
-                <li class="nav-item">
+                <li class="nav-item inactive">
                     <a class="nav-link" href="/contact"><i class="fas fa-envelope"></i> Contact</a>
-                    {{!--
+                </li>
+                {{!--
                 <li class="nav-item">
                     <a class="nav-link" href="/policy"><i class="fas fa-envelope"></i> Policy</a>
                 </li> --}}
