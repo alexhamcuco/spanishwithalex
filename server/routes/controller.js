@@ -21,6 +21,10 @@ router.get('/materials2', (req, res) => {
     res.render('materials', { title: 'Materials to learn2' });
 });
 
+router.get('/emailConfirmation', (req, res) => {
+    res.render('emailConfirmation', { title: 'Gracias pal' });
+});
+
 router.get('/servsestar', (req, res) => {
     res.render('servsestar', { title: 'Materials to learn' });
 });

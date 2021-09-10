@@ -68,7 +68,8 @@ app.post('/send', (request, response) => {
     // console.log('Message sent: %s', info.messageId);
     // console.log('Preview URL: %s', nodemailer.getTestMessageUrl(info));
 
-    response.render('contact', { msg: 'Email has been sent' });
+    response.redirect('emailConfirmation');
+    // response.render('contact', { msg: 'Email has been sent' });
 });
 
 // listening the server
