@@ -57,19 +57,19 @@
 
                         <script>
                             $("form").submit(function (event) {
-                                // console.log('called');
+                                console.log('called');
                                 if (grecaptcha.getResponse() == "") {
-                                    // console.log('should stop this');
+                                    console.log('should stop this');
                                     event.preventDefault();  // this prevents the form from submitting
                                     // if you don't like these, research how to show/hide div's in jquery
                                     // https://tutorialdeep.com/jquery/jquery-show-hide-toggle-functions/
-                                    alert("You can't proceed!");
+                                    alert("Eres un Robot");
                                     // $("formError").show(); <-- not quite right
                                 } else {
                                     // you could do some sort of show/hide div thing here
                                     // where you display a message
-                                    console.log('thanks, all done')
-                                    alert("Thank you"); // you may not even need this, you may be able to remove the else statement
+                                    //console.log('thanks, all done')
+                                    // alert("Thank you"); // you may not even need this, you may be able to remove the else statement
                                 }
 
                             });
