@@ -6,9 +6,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>{{ title }}
     </title>
-    <!-- I am trying to set up the recapcha fro google with no success -->
-    <!-- <script src="https://www.google.com/recaptcha/api.js" async defer></script> -->
-
+     <script src="https://code.jquery.com/jquery-3.5.0.js" async defer></script>
+     <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+     
 </head>
 {{> head }}
 
@@ -33,36 +33,40 @@
                         <h3>
                             Ask me anything. I won't bite.
                         </h3>
-                        {{ msg }}
+                        {{ msg }} <!-- This is coming from app.js, line 71 -->
                     </div>
                     <div class="card-body">
-                        <form method="POST" action="send">
-
-                            <div class=" form-group">
-                                <input type="email" name=" email" class="form-control" placeholder="Your email"
-                                    required=>
-
-                                <div class="form-group">
+                    <form id='form' action="send" method="POST">
+                        <div>
+                            {{!-- <div id='formError'>You've made a mistake</div> --}}
+                             <input type="email" name="email" class="form-control" placeholder="Your email"
+                                    required= />
+                                                            <div class="form-group">
                                     <textarea class="form-control" name="message" cols="30" rows="10"
-                                        placeholder="Tell me how can I help you" required=></textarea>
+                                        placeholder="Tell me how can I help you" required= ></textarea>
                                 </div>
-                                <div class="form-group">
-                                    <button type="submit" class="btn btn-primary btn-block">
+                            <div id='grecaptcha' class="g-recaptcha" data-sitekey="6LcGB9sZAAAAAPe4l8WW25P8_AhmRsprBg2ccGBC"></div>
+                           <button type="submit" class="btn btn-primary btn-block">
                                         Send message to Alex
-                                    </button>
-
-
-                                </div>
-
-
-                                <!-- part from the recaptcha tutorial -->
-                                <!-- </form>
-                        <form action="?" method="POST">
-                            <div class="g-recaptcha" data-sitekey="6LcGB9sZAAAAAPe4l8WW25P8_AhmRsprBg2ccGBC"></div>
-                            <br />
-                            <input type="submit" value="Submit">
-                            -->
+                            </button>
+                        </div>
                         </form>
+                        <span></span>
+                        
+                        <script>
+                        $( "form" ).submit(function( event ) {
+                            if (grecaptcha.getResponse() == "") {
+                                    event.preventDefault();  // this prevents the form from submitting
+                                    // if you don't like these, research how to show/hide div's in jquery
+                                    // https://tutorialdeep.com/jquery/jquery-show-hide-toggle-functions/
+                                    alert("You can't proceed!");
+                                    // $("formError").show(); <-- not quite right
+                                } else {
+                                    alert("Thank you"); // you may not even need this, you may be able to remove the else statement
+                                }
+                        
+                        });
+                        </script>
                     </div>
                 </div>
             </div>
