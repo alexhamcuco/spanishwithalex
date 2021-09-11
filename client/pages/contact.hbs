@@ -46,13 +46,13 @@
                                     <textarea class="form-control" name="message" cols="30" rows="10"
                                         placeholder="Tell me how can I help you" required=></textarea>
                                 </div>
-                                <div id='grecaptcha' class="g-recaptcha"
-                                    data-sitekey="6LcGB9sZAAAAAPe4l8WW25P8_AhmRsprBg2ccGBC"></div>
+
                                 <button type="submit" class="btn btn-primary btn-block">
                                     Send message to Alex
                                 </button>
                             </div>
                         </form>
+
                         <span></span>
 
                         <script>
@@ -68,12 +68,18 @@
                                 } else {
                                     // you could do some sort of show/hide div thing here
                                     // where you display a message
-                                    //console.log('thanks, all done')
+                                    console.log('thanks, all done');
                                     // alert("Thank you"); // you may not even need this, you may be able to remove the else statement
                                 }
 
                             });
                         </script>
+
+                    </div>
+                    <div id='grecaptcha' class="g-recaptcha btn " style="transform: scale(0.77); 
+                                -webkit-transform: scale(0.77); transform-origin: 0 0;
+                                -webkit-transform-origin: 0 0;" data-theme="light"
+                        data-sitekey="6LcGB9sZAAAAAPe4l8WW25P8_AhmRsprBg2ccGBC">
                     </div>
                 </div>
             </div>

@@ -22,7 +22,7 @@ router.get('/materials2', (req, res) => {
 });
 
 router.get('/emailConfirmation', (req, res) => {
-    res.render('emailConfirmation', { title: 'Gracias pal' });
+    res.render('emailConfirmation', { title: 'Gracias' });
 });
 
 router.get('/servsestar', (req, res) => {
