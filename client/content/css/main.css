@@ -1,8 +1,9 @@
 /* fonts */
 
 @font-face {
-  font-family: "roboto";
-  src: url("..\fonts\Roboto-Medium-webfont.woff") format("woff");
+  font-family: 'robotomedium';
+  src: 
+       url('../fonts/Roboto-Medium-webfont.woff') format('woff');
   font-weight: normal;
   font-style: normal;
 
@@ -23,7 +24,7 @@ body {
 }
 
 .navbar-brand {
-    font-family: 'roboto', normal;
+    font-family: 'robotomedium', normal;
     font-size: 1.5rem;
 }
 
