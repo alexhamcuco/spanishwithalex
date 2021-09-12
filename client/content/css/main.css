@@ -24,13 +24,17 @@ body {
 }
 
 .navbar-brand {
-    font-family: 'robotomedium', normal;
-    font-size: 1.5rem;
+    font-family: 'robotomedium', normal ;
+    font-size: 2.5rem;
+    
+    
+  
 }
+
 
 .nav-link {
     text-transform: uppercase;
-    font-family: 'roboto', normal;
+    font-family: 'robotomedium', normal;
 }
 
 header img {
