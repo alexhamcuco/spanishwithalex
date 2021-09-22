@@ -1,4 +1,4 @@
-/* fonts */
+        /* fonts */
 
 @font-face {
   font-family: 'robotomedium';
@@ -8,6 +8,7 @@
   font-style: normal;
 
 }
+        /* end fonts */
 
 body {
     background: #7474bf; /* fallback for old browsers */
@@ -23,14 +24,15 @@ body {
     ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
 }
 
+
+        /* text nav next to logo */
+
 .navbar-brand {
     font-family: 'robotomedium', normal ;
     font-size: 2.5rem;
-    
-    
-  
 }
 
+        /* text nav right side */
 
 .nav-link {
     text-transform: uppercase;
@@ -40,6 +42,8 @@ body {
 header img {
     width: 60%;
 }
+
+/* size logo */
 
 .logo {
     width: 100px;
@@ -91,6 +95,7 @@ header img {
   .aligncenter {
     text-align: center;
 }
+/* recapcha responsive */
 
 @media (min-width: 320px) and (max-width: 480px) {
   #recaptcha_challenge_image{
@@ -124,3 +129,7 @@ header img {
   }
 
 }
+/* end recapcha responsive */
+
+
+
