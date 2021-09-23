@@ -2,15 +2,15 @@ const express = require('express');
 const router = express.Router();
 
 router.get('/', (req, res) => {
-    res.render('index', { title: 'Home' });
+    res.render('index', { title: '' });
 });
 
 router.get('/contact', (req, res) => {
-    res.render('contact', { title: 'Contact' });
+    res.render('contact', { title: '' });
 });
 
 router.get('/materials', (req, res) => {
-    res.render('materials', { title: 'Materials' });
+    res.render('materials', { title: '' });
 });
 
 router.get('/materials1', (req, res) => {
