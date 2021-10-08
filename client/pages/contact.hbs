@@ -14,6 +14,7 @@
 
 <body>
     {{> navigation }}
+    <hr class="my-5" />
 
     <style>
         img {
@@ -21,19 +22,18 @@
             height: auto;
         }
     </style>
-    <p style="text-align:center;"><img src="\images\dogbitingleg.png" alt="dogbiting" /></p>
+    <p style="text-align:center;"><img src="\images\butterfly.png" alt="dogbiting" /></p>
 
 
 
     <div class="container p-5">
         <div class="row">
             <div class="col-md-9 offset-md-1">
-                <div class="card animated flipInY">
+                <div class="card animated fade-in">
                     <div class="cad-header bg-dark text-white text-center">
                         <h3>
-                            Tell me why do you want to learn Spanish. I won't bite. <p></p>
-                            After that, you will be able to book a free trial lesson with me.
-
+                            <p></p>
+                            fill the form and get a welcome gift!
                         </h3>
                         {{ msg }}
                         <!-- This is coming from app.js, line 71 -->
@@ -44,9 +44,10 @@
                                 {{!-- <div id='formError'>You've made a mistake</div> --}}
                                 <input type="email" name="email" class="form-control" placeholder="Your email"
                                     required= />
+
                                 <div class="form-group">
                                     <textarea class="form-control" name="message" cols="30" rows="10"
-                                        placeholder="Why do you want to learn Spanish?" required=></textarea>
+                                        placeholder="Do you like coffee or te?" required=></textarea>
                                 </div>
 
                                 <button type="submit" class="btn btn-primary btn-block">
