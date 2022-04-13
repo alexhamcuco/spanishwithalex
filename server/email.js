@@ -11,9 +11,9 @@ const ses = new AWS.SES({ apiVersion: '2010-12-01' });
 const sendEmail = (emailFrom, message) => {
     const params = {
         Destination: {
-            ToAddresses: ['spanishwithalex@gmail.com'],
+            ToAddresses: ['@gmail.com'],
         },
-        Source: 'spanishwithalex@gmail.com',
+        Source: '@gmail.com',
         Message: {
             Body: {
                 Html: {
