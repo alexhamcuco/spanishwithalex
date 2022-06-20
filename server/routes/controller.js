@@ -29,9 +29,23 @@ router.get('/servsestar', (req, res) => {
     res.render('servsestar', { title: 'Materials to learn' });
 });
 
+router.get('/seryestar2', (req, res) => {
+    res.render('seryestar2', { title: 'Materials to learn' });
+});
+
+router.get('/fregaronofregar', (req, res) => {
+    res.render('fregaronofregar', { title: 'fregaronofregar' });
+});
+
 router.get('/LasVocales', (req, res) => {
     res.render('LasVocales', { title: 'Materials to learn' });
 });
+
+router.get('/sentirysentirse', (req, res) => {
+    res.render('sentirysentirse', { title: 'Materials to learn' });
+});
+
+
 router.get('/FalsosAmigos', (req, res) => {
     res.render('FalsosAmigos', { title: 'Materials to learn' });
 });
