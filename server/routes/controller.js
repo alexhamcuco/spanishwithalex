@@ -50,6 +50,10 @@ router.get('/FalsosAmigos', (req, res) => {
     res.render('FalsosAmigos', { title: 'Materials to learn' });
 });
 
+router.get('/avionRetraso', (req, res) => {
+    res.render('avionRetraso', { title: 'Avion Retraso' });
+});
+
 router.get('/policy', (req, res) => {
     res.render('policy', { title: 'policy' });
 });
