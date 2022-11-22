@@ -54,12 +54,22 @@ router.get('/avionRetraso', (req, res) => {
     res.render('avionRetraso', { title: 'Avion Retraso' });
 });
 
+router.get('/buscoCompanero', (req, res) => {
+    res.render('buscoCompanero', { title: 'buscarCompanero' });
+});
+
 router.get('/policy', (req, res) => {
     res.render('policy', { title: 'policy' });
+});
+
+router.get('/tirarComida', (req, res) => {
+    res.render('tirarComida', { title: 'tirarComida' });
 });
 
 router.get('/prueba', (req, res) => {
     res.render('prueba', { title: 'Materials to learn' });
 });
+
+
 
 module.exports = router;
