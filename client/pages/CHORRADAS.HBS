@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{{ title }}</title>
+    <script src="https://code.jquery.com/jquery-3.5.0.js"></script>
+    <script src="https://www.google.com/recaptcha/api.js"></script>
+    {{> head }}
+</head>
+
+<body>
+    {{> navigation }}
+    <hr class="my-5" />
+    <style>
+        img {
+            width: 45%;
+            height: auto;
+        }
+    </style>
+    <div class="container p-5">
+        <div class="row">
+            <div class="col-md-9 offset-md-1">
+                <div class="card animated fade-in">
+                    <header class="card-header bg-dark text-white text-center">
+                        <h3>fill the form and get a welcome gift!</h3>
+                        {{ msg }}
+                        <!-- This is coming from app.js, line 71 -->
+                    </header>
+                    <main class="card-body">
+                        <form id="form" action="send" method="POST">
+                            <div>
+                                <input type="email" name="email" class="form-control" placeholder="Your email"
+                                    required />
+
+                                <div class="form-group">
+                                    <textarea class="form-control" name="message" cols="30" rows="10"
+                                        placeholder="Do you like coffee or te?" required></textarea>
+                                </div>
+
+                                <button type="submit" class="btn btn-primary btn-block">Send message to Alex</button>
+                            </div>
+                        </form>
+
+                        <span></span>
+
+                        <script>
+                            $("form").submit(function (event) {
+                                console.log("called");
+                                if (grecaptcha.getResponse() == "") {
+                                    console.log("should stop this");
+                                    event.preventDefault(); // this prevents the form from submitting
+                                    // if you don't like these, research how to show/hide div's in jquery
+                                    // https://tutorialdeep.com/jquery/jquery-show-hide-toggle-functions/
+                                    alert("Eres un Robot");
+                                    // $("formError").show(); <-- not quite right
+                                } else {
+                                    // you could do some sort of show/hide div thing here
+                                    // where you display a message
+                                    console.log("thanks, all done");
+                                    // alert("Thank you"); // you may not even need this, you may be able to remove the else statement
+                                }
+                        

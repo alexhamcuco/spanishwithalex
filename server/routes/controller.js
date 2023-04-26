@@ -70,6 +70,14 @@ router.get('/prueba', (req, res) => {
     res.render('prueba', { title: 'Materials to learn' });
 });
 
+router.get('/CHORRADAS', (req, res) => {
+    res.render('CHORRADAS', { title: 'CHORRADAS' });
+});
+
+router.get('/pedirperdon', (req, res) => {
+    res.render('pedirperdon', { title: 'Pedir perdón' });
+});
+
 
 
 module.exports = router;
